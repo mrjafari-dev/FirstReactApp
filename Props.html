@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="Root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+
+
+        function Greeting(props){
+            return <div>hello {props.name}</div>
+        }
+
+        function SetValue(value){
+            return <div>
+                <div>your name is 
+                {value.name} and last is {value.last}
+                </div>
+                <Greeting name ={value.name}/>
+                </div> 
+        }
+
+        var view = <SetValue name="mohammad" last="jafari"/>
+
+        ReactDOM.render(view,document.getElementById('Root'));
+
+    </script>
+</body>
+</html>
